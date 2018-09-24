@@ -53,7 +53,7 @@ class ThreadManager:
         self.lock.acquire()
         try:
             for _ in range(num):
-                self.startThread(fn, *args)
+                self.start_thread(fn, *args)
         finally:
             self.lock.release()
 
