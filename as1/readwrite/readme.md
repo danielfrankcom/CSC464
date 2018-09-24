@@ -1,3 +1,7 @@
+# Readers-writers Problem
+
+This problem is described [here](http://greenteapress.com/semaphores/LittleBookOfSemaphores.pdf#section.4.2).
+
 1. This problem models almost exactly what it describes, as it is not possible for readers and writers to inspect/modify the same data at the same time as it may change unexpectedly. A file for example must have the same kind of synchronization to protect its state and ensure that it is consistent.
 
 2. Both solutions in this implementation stemmed from the 'Little Book of Semaphores', and are designed to investigate the performance difference between starving and starving-resistent implementations. By using Python's object-oriented features, the code is pretty easy to read and maintain in both cases. The differences between the solutions is subtle, and they only differ in the use of a turnstile in the starving-resistent solution. Some code was written to keep track of the time that each thread was forced to wait, and to track the highest and the average values.

@@ -1,3 +1,7 @@
+# Building H<sub>2</sub>O
+
+This problem is described [here](http://greenteapress.com/semaphores/LittleBookOfSemaphores.pdf#section.5.6).
+
 1. This problem models requirements in a system, where an action cannot be performed until a constraint is met. In such a scenario, threads must wait until all prerequisites are met before the action can be perfomed.
 
 2. The solution that I wrote in Go uses channels exclusively, and is conceptually a lot easier to understand. It is largely synchronous, with the main concurrent aspect coming from the fact that atoms are queued to be processed on one thread, and bonded into a molecule on another thread. The solution in Python is based on the 'Little Book of Semahpores', and represents each atom as a thread. It is much more difficult to understand due to the amount of synchronization primitves used, but it is far more concurrent than the Go-based solution. In both cases, the built in language libraries provided everything necessary to implement the solutions, so no extra plumbing was required on my part.

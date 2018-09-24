@@ -1,3 +1,7 @@
+# Startup Synchronization Problem
+
+This problem was based on real problems that I have experienced, and is designed to model a scenario where it is critical for all threads to start before any work can be performed. In these implementations, threads must wait until all threads are ready to proceed, and the master thread must be able to return from the blocking synchronization call to perform actions if a thread fails to start.
+
 1. This problem occurrs regularly in computer science, as threads are not always guarenteed to start. In situations such as this, it is valuable to be able to detect such a failure case, and take action to fix it. Additionally, you may want to prevent other threads from performing work until all threads have started successfully, in order to maintain a consistent state in the system.
 
 2. These solutions were both designed by me, with the first being a collaborative effort between threads, where all parties know how the system works and are willing to synchronize together. The second takes a more object-oriented approach to the problem, and abstracts much of the locking and synchronization behind an object.

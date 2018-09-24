@@ -1,3 +1,7 @@
+# Cigarette Smokers Problem
+
+This problem is described [here](http://greenteapress.com/semaphores/LittleBookOfSemaphores.pdf#section.4.5).
+
 1. This problem shows up commonly in operating system process scheduling, as certain resources are available to the processes at different times. Each process needs a specific set of resources, which cannot be consumed by other processes at the same time. When the processes are available, they must acquire them all exclusively.
 
 2. I wrote both of the implementations in Python, with the first being heavily inspired by the 'Little Book of Semaphores' solution, and the second being a custom design. The first solution is correct, as described in the book. I wrote it while attempting to minimize duplicate code. As a result, the code itself is concise, but not necessarily easy to understand as it is quite abstract. Though it would be potentially easier to understand if each agent, pusher, and smoker was a seperate method, it would be much more difficult to make modifications to the code.
