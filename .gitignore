@@ -1,3 +1,4 @@
 as1/report/*
 !as1/report/report.tex
 !as1/report/report.pdf
+*.toolbox
