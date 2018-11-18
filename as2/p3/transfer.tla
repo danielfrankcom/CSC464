@@ -19,13 +19,15 @@ macro increment(index) begin
 end macro;
 
 macro receive(index) begin
+    \* Take the element-wise maximum of each element
     vectors[index] := <<Max(vectors[index][1], messages[index][1]), Max(vectors[index][2], messages[index][2]), Max(vectors[index][3], messages[index][3])>>;
 end macro;
 
 procedure send(sender)
-variables receivers = {NextProc1(self), NextProc2(self)};
+variables receivers = {NextProc1(self), NextProc2(self)}; \* The indices of processes to send to
 begin Q:
     with r \in receivers do
+        \* If receiver has not processed the message yet, maximize your message with the existing so as not to remove information
         messages[r] := <<Max(vectors[sender][1], messages[r][1]), Max(vectors[sender][2], messages[r][2]), Max(vectors[sender][3], messages[r][3])>>;
     end with;
     return;
@@ -34,12 +36,12 @@ end procedure;
 fair process Update \in 1..NumProcesses
 variables counter = 0;
 begin P:
-    while counter < 2 do
+    while counter < 2 do \* Only perform 2 events to keep computational complexity low
         A: receive(self);
         B: either
-                increment(self);
+                increment(self); \* Represents an internal event
             or
-                increment(self);
+                increment(self); \* Represents an external event
                 call send(self);
             end either;
         F: counter := counter + 1;
