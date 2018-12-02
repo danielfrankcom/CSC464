@@ -1,0 +1,3 @@
+rootProject.name = 'bitonic-sort'
+
+include 'sort'
