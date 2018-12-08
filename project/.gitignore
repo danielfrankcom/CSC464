@@ -1,2 +1,10 @@
+# Local gradle distribution
 .gradle/*
+
+# Build files
 **/build/*
+**/out/*
+
+# Don't track user's IntelliJ settings
+.idea/dictionaries/*
+.idea/workspace.xml
