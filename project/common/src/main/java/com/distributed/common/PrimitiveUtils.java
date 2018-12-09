@@ -1,5 +1,7 @@
 package com.distributed.common;
 
+import java.util.Random;
+
 /**
  * Provides utilities for generating primitive types.
  */
@@ -30,6 +32,18 @@ public class PrimitiveUtils {
         }
 
         return result;
+    }
+
+
+    public static int[] randomArray(Random random, int size) {
+        assert size >= 0;
+
+        final int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = random.nextInt();
+        }
+
+        return array;
     }
 
 }
