@@ -4,7 +4,6 @@ package com.distributed.sorting;
  * Represents the polarity of a data set that is to be sorted. The {@link #shouldSwap(int, int)}
  * method can be used to determine if 2 elements in the data set should be swapped.
  */
-@SuppressWarnings("WeakerAccess")
 public class Polarity implements ISwapDecision {
 
     public static Polarity ASCENDING = new Polarity(true);
