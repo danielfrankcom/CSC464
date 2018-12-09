@@ -124,7 +124,7 @@ public class SinglePassSwapperTest {
             final int[] source = PrimitiveUtils.range(1, size);
 
             final IElementSwapper swapper = new SinglePassElementSwapper(source);
-            swapper.swap();
+            swapper.execute();
             assertSwapped(source, ISortCondition.ASCENDING, SinglePassSwapperTest::firstHalfIsLessThanSecond);
         }
 
@@ -136,7 +136,7 @@ public class SinglePassSwapperTest {
             ArrayUtils.reverse(source);
 
             final IElementSwapper swapper = new SinglePassElementSwapper(source);
-            swapper.swap();
+            swapper.execute();
             assertSwapped(source, ISortCondition.DESCENDING, SinglePassSwapperTest::firstHalfIsLessThanSecond);
             System.out.println(Arrays.toString(source));
         }
@@ -153,7 +153,7 @@ public class SinglePassSwapperTest {
             final int[] source = PrimitiveUtils.range(1, size);
 
             final IElementSwapper swapper = new SinglePassElementSwapper(source, Polarity.DESCENDING);
-            swapper.swap();
+            swapper.execute();
             assertSwapped(source, ISortCondition.ASCENDING, SinglePassSwapperTest::firstHalfIsGreaterThanSecond);
         }
 
@@ -165,7 +165,7 @@ public class SinglePassSwapperTest {
             ArrayUtils.reverse(source);
 
             final IElementSwapper swapper = new SinglePassElementSwapper(source, Polarity.DESCENDING);
-            swapper.swap();
+            swapper.execute();
             assertSwapped(source, ISortCondition.DESCENDING, SinglePassSwapperTest::firstHalfIsGreaterThanSecond);
         }
 
@@ -176,7 +176,7 @@ public class SinglePassSwapperTest {
             final int[] source = PrimitiveUtils.range(1, size);
 
             final IElementSwapper swapper = new SinglePassElementSwapper(source, Polarity.ASCENDING);
-            swapper.swap();
+            swapper.execute();
             assertSwapped(source, ISortCondition.ASCENDING, SinglePassSwapperTest::firstHalfIsLessThanSecond);
         }
 
@@ -188,7 +188,7 @@ public class SinglePassSwapperTest {
             ArrayUtils.reverse(source);
 
             final IElementSwapper swapper = new SinglePassElementSwapper(source, Polarity.ASCENDING);
-            swapper.swap();
+            swapper.execute();
             assertSwapped(source, ISortCondition.DESCENDING, SinglePassSwapperTest::firstHalfIsLessThanSecond);
             System.out.println(Arrays.toString(source));
         }
@@ -214,7 +214,7 @@ public class SinglePassSwapperTest {
 
                 // [1, 2, .., n-1, n] -> [.., n-1, n, 1, 2, ..]
                 final IElementSwapper swapper = new SinglePassElementSwapper(copy, start, stop, Polarity.DESCENDING);
-                swapper.swap();
+                swapper.execute();
                 assertSwapped(copy, start, stop, ISortCondition.ASCENDING,
                         SinglePassSwapperTest::firstHalfIsGreaterThanSecond);
             }
@@ -231,7 +231,7 @@ public class SinglePassSwapperTest {
 
                 // [n, n-1, .., 2, 1] -> [n, n-1, .., 2, 1]
                 final IElementSwapper swapper = new SinglePassElementSwapper(copy, start, stop, Polarity.DESCENDING);
-                swapper.swap();
+                swapper.execute();
                 assertSwapped(copy, start, stop, ISortCondition.DESCENDING,
                         SinglePassSwapperTest::firstHalfIsGreaterThanSecond);
             }
@@ -248,7 +248,7 @@ public class SinglePassSwapperTest {
 
                 // [1, 2, .., n-1, n] -> [1, 2, .., n-1, n]
                 final IElementSwapper swapper = new SinglePassElementSwapper(copy, start, stop, Polarity.ASCENDING);
-                swapper.swap();
+                swapper.execute();
                 assertSwapped(copy, start, stop, ISortCondition.ASCENDING,
                         SinglePassSwapperTest::firstHalfIsLessThanSecond);
             }
@@ -265,7 +265,7 @@ public class SinglePassSwapperTest {
 
                 // [1, 2, .., n-1, n] -> [.., 2, 1, n, n-1, ..]
                 final IElementSwapper swapper = new SinglePassElementSwapper(copy, start, stop, Polarity.ASCENDING);
-                swapper.swap();
+                swapper.execute();
                 assertSwapped(copy, start, stop, ISortCondition.DESCENDING,
                         SinglePassSwapperTest::firstHalfIsLessThanSecond);
             }

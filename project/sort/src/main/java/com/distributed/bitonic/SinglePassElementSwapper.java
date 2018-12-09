@@ -17,7 +17,7 @@ public class SinglePassElementSwapper implements IElementSwapper {
     /**
      * Create a new {@link SinglePassElementSwapper}.
      *
-     * @param data         The array of {@link Integer} primitives to operate on.
+     * @param data The array of {@link Integer} primitives to operate on.
      */
     public SinglePassElementSwapper(int[] data) {
         this(data, Polarity.ASCENDING);
@@ -67,7 +67,7 @@ public class SinglePassElementSwapper implements IElementSwapper {
     private final ISwapDecision mSwapDecision;
 
     @Override
-    public void swap() {
+    public void execute() {
 
         for (int i = mStart; i < mStart + mComparisons; i++) {
 

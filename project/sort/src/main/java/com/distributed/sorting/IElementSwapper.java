@@ -7,7 +7,7 @@ package com.distributed.sorting;
  * operations performed by all derivations consist of swapping the
  * locations of array elements in order to achieve the defined goal.
  * <p>
- * Until the {@link #swap()} method has been called, the configured
+ * Until the {@link #execute()} method has been called, the configured
  * swapping operation has not be performed.
  * </p>
  */
@@ -21,6 +21,6 @@ public interface IElementSwapper {
      * may cause result in an unexpected state, unless {@link IElementSwapper}
      * instances are synchronized.
      */
-    void swap();
+    void execute();
 
 }
