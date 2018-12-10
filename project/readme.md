@@ -1,6 +1,6 @@
 # Distributed Bitonic Sort 
 
-I chose to implement the [bitonic sorting](http://www.inf.fh-flensburg.de/lang/algorithmen/sortieren/bitonic/bitonicen.htm) algorithm as my final project for this class. I wrote it in Java, and the build system uses Gradle.
+I chose to implement the [bitonic sorting](http://www.inf.fh-flensburg.de/lang/algorithmen/sortieren/bitonic/bitonicen.htm) algorithm as my final project for this class. I wrote it in [Java](https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html), with a build system that utilizes [Gradle](https://gradle.org/).
 
 This is a sort that is not particularly fast in software but can be massively parallelized. It is commonly used in hardware sorting implementations due to the interesting property that it can be performed with the exact same set of comparisons each time, assuming that the input size is the same.
 
