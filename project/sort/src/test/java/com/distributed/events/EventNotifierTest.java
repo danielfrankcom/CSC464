@@ -69,7 +69,7 @@ public class EventNotifierTest {
 
         for (int i = 0; i < ROUNDS; i++) {
 
-            final int expected = mRandom.nextInt(EVENTS);
+            final int expected = mRandom.nextInt(EVENTS) + 1;
             final EventNotifier<Integer> notifier = new EventNotifier<>(expected);
 
             assertEquals(expected, notifier.getExpected());
