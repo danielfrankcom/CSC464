@@ -13,7 +13,7 @@ This implementation is a generalized version of the algorithm, that works for an
 
 You can find the produced `.jar` file in `build/libs/`.
 
-The tests exercise all parts of the implementation for better than can be demonstrated through the entry point, however, the `.jar` file can be used to sort an array via the command line parameters.
+The tests exercise all parts of the implementation far better than can be demonstrated through the entry point, however, the `.jar` file can be used to sort an array via the command line parameters.
 
 ## Using the `.jar` file
 
