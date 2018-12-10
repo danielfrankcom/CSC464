@@ -9,7 +9,7 @@ This implementation is a generalized version of the algorithm, that works for an
 ## Building
 
 1. Make sure the Java 8 JDK in installed.
-2. Run `./gradlew` (on Linux or Windows).
+2. Run `./gradlew build` (on Linux or Windows).
 
 You can find the produced `.jar` file in `build/libs/`.
 
