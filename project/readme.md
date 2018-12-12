@@ -29,13 +29,15 @@ Though this algorithm is not normally used in software implementations, I decide
 
 #### For comparison:
 
+`Arrays.sort()` is clearly very fast.
+
 |Data Size | 1  |  2 |  4  |  8 | 16 | 32 | 64 | 128 | 256 | 512 | 1024 | 65536 | 262144 |
 |:---------:|:---:|:---:|:---:|:--:|:--:|:--:|:--:|:---:|:---:|:---:|:----:|:-----:|:------:|
-|       **`Arrays.sort()`**  |1 | 1 | 0 | 1 | 0 | 0 | 1 | 0 |  0 | 0 |  0  |  9 |  44 |
-
-You can see in the grid below that every scenario resulted in the distributed algorithm performing slower. Part of this may be the fact that it is not truly distributed, and is only running with threads, but I suspect that any communication overhead would more than make up for the speed gained by using multiple machines.
+|       **Time (ms)**  |1 | 1 | 0 | 1 | 0 | 0 | 1 | 0 |  0 | 0 |  0  |  9 |  44 |
 
 ### Results
+
+You can see in the grid below that every scenario resulted in the distributed algorithm performing slower. Part of this may be the fact that it is not truly distributed, and is only running with threads, but I suspect that any communication overhead would more than make up for the speed gained by using multiple machines.
 
 |              | Data Size |  1  |  2 |  4  |  8 | 16 | 32 | 64 | 128 | 256 | 512 | 1024 | 65536 | 262144 |
 |:------------:|:---------:|:---:|:--:|:---:|:--:|:--:|:--:|:--:|:---:|:---:|:---:|:----:|:-----:|:------:|
@@ -60,6 +62,8 @@ You can see in the grid below that every scenario resulted in the distributed al
 |      18      |           |  18 | 17 |  17 | 25 | 17 | 17 | 23 |  18 |  17 |  17 |  24  |  1038 |  4702  |
 |      19      |           |  23 | 17 |  18 | 15 | 17 | 12 | 18 |  18 |  16 |  27 |  16  |  1007 |  4526  |
 |      20      |           |  17 | 18 |  16 | 18 | 18 | 12 | 18 |  18 |  22 |  17 |  18  |  926  |  4670  |
+
+#### All units in the above table are in ms.
 
 # Building
 
