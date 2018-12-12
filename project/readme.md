@@ -24,6 +24,41 @@ Above, you can see a representation of the sorting process that the algorithm go
 
 Though this algorithm is not normally used in software implementations, I decided to test its performance against the build in `Arrays.sort()` method call. I varied the number of threads in the pool, as well as the size of the data in order to get a good idea of how the algorithm performed.
 
+
+#### For comparison:
+
+|Data Size | 1  |  2 |  4  |  8 | 16 | 32 | 64 | 128 | 256 | 512 | 1024 | 65536 | 262144 |
+|:---------:|:---:|:---:|:---:|:--:|:--:|:--:|:--:|:---:|:---:|:---:|:----:|:-----:|:------:|
+|       **`Arrays.sort()`**  |1 | 1 | 0 | 1 | 0 | 0 | 1 | 0 |  0 | 0 |  0  |  9 |  44 |
+
+You can see in the grid below that every scenario resulted in the distributed algorithm performing slower. Part of this may be the fact that it is not truly distributed, and is only running with threads, but I suspect that any communication overhead would more than make up for the speed gained by using multiple machines.
+
+### Results
+
+|              | Data Size |  1  |  2 |  4  |  8 | 16 | 32 | 64 | 128 | 256 | 512 | 1024 | 65536 | 262144 |
+|:------------:|:---------:|:---:|:--:|:---:|:--:|:--:|:--:|:--:|:---:|:---:|:---:|:----:|:-----:|:------:|
+| **Thread Count** |           |     |    |     |    |    |    |    |     |     |     |      |       |        |
+|       1      |           | 208 | 97 | 106 | 94 | 93 | 92 | 99 |  89 |  88 |  96 |  87  |  8663 |  38520 |
+|       2      |           |  73 | 67 |  61 | 58 | 55 | 63 | 61 |  61 |  77 |  59 |  59  |  5574 |  28133 |
+|       3      |           |  39 | 31 |  38 | 28 | 29 | 29 | 34 |  30 |  36 |  33 |  32  |  2734 |  13332 |
+|       4      |           |  25 | 23 |  33 | 32 | 26 | 24 | 26 |  25 |  37 |  27 |  25  |  2051 |  10014 |
+|       5      |           |  23 | 23 |  24 | 24 | 18 | 25 | 22 |  20 |  22 |  25 |  23  |  1738 |  9230  |
+|       6      |           |  22 | 25 |  24 | 23 | 23 | 21 | 20 |  22 |  22 |  22 |  21  |  1671 |  8031  |
+|       7      |           |  19 | 19 |  20 | 27 | 25 | 24 | 20 |  20 |  22 |  19 |  20  |  1460 |  7313  |
+|       8      |           |  21 | 25 |  16 | 23 | 18 | 19 | 19 |  18 |  20 |  13 |  19  |  1425 |  6057  |
+|       9      |           |  18 | 17 |  19 | 18 | 21 | 20 | 19 |  17 |  19 |  17 |  17  |  1201 |  5623  |
+|      10      |           |  17 | 18 |  17 | 18 | 19 | 17 | 17 |  16 |  17 |  19 |  17  |  1032 |  5144  |
+|      11      |           |  19 | 16 |  18 | 15 | 19 | 17 | 19 |  17 |  17 |  17 |  17  |  1088 |  4875  |
+|      12      |           |  16 | 21 |  17 | 17 | 16 | 18 | 16 |  16 |  16 |  17 |  15  |  1063 |  4650  |
+|      13      |           |  18 | 20 |  16 | 18 | 15 | 16 | 17 |  17 |  17 |  17 |  18  |  1001 |  4731  |
+|      14      |           |  17 | 18 |  17 | 16 | 16 | 11 | 16 |  16 |  12 |  18 |  16  |  1028 |  4796  |
+|      15      |           |  16 | 22 |  18 | 16 | 17 | 15 | 16 |  17 |  17 |  16 |  18  |  950  |  4747  |
+|      16      |           |  16 | 19 |  18 | 18 | 18 | 25 | 17 |  16 |  14 |  17 |  18  |  1033 |  4680  |
+|      17      |           |  17 | 19 |  17 | 10 | 18 | 16 | 16 |  17 |  15 |  12 |  18  |  978  |  4777  |
+|      18      |           |  18 | 17 |  17 | 25 | 17 | 17 | 23 |  18 |  17 |  17 |  24  |  1038 |  4702  |
+|      19      |           |  23 | 17 |  18 | 15 | 17 | 12 | 18 |  18 |  16 |  27 |  16  |  1007 |  4526  |
+|      20      |           |  17 | 18 |  16 | 18 | 18 | 12 | 18 |  18 |  22 |  17 |  18  |  926  |  4670  |
+
 # Building
 
 1. Make sure the Java 8 JDK in installed.
